@@ -1,0 +1,8 @@
+<h2>Let me know what you think about our application</h2>
+<div class="stars-container" (mouseout)="initRankingAgain()">
+    <button (mouseover)="getRanking(star)"
+    *ngFor="let star of stars" (click)="sendStars(star)">
+        <span [ngClass]="{'rankedPosition': star?.id<=rank && !clickedStar, 'starSended': star?.id<=rank && clickedStar}" class="material-icons">star_rate</span>
+    </button>
+</div>
+<h4 *ngIf="clickedStar">{{rankingText}} {{rank}}</h4>
