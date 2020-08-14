@@ -16,16 +16,19 @@ export class StarComponent implements OnInit {
   }
 
   getRanking(star) {
+    //This function will keep the value of the hover position
     if (!this.clickedStar)
     this.rank = star.id;
   }
 
   initRankingAgain() {
+    //This function will set the initial hover value again
     if (!this.clickedStar)
     this.rank = null;
   }
 
   sendStars(star) {
+    //Once the user choose one star, I will keep the chosen value
     this.clickedStar = true;
     this.rank = star.id;
   }
